@@ -68,7 +68,7 @@ r-rsvg = "*"
 default = {solve-group = "default"}
 
 [tool.pixi.tasks.init]
-cmd = "python ./scripts/rename.py && gh repo set-default https://github.com/munch-group/$(basename $(git rev-parse --show-toplevel)) && git add src/$(basename $(git rev-parse --show-toplevel)) && git add -u && gh lfs install && quarto publish gh-pages"
+cmd = "python ./scripts/rename.py && gh repo set-default https://github.com/munch-group/$(basename $(git rev-parse --show-toplevel)) && git add src && git add -u"
 
 [tool.pixi.tasks.install-dev]
 cmd = "XLA_FFI_INCLUDE_DIR=$(python -c 'from jax import ffi; print(ffi.include_dir())') pip install --no-build-isolation --force-reinstall --no-deps ."
