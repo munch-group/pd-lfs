@@ -71,7 +71,7 @@ default = {solve-group = "default"}
 cmd = "python ./scripts/rename.py && gh repo set-default https://github.com/munch-group/$(basename $(git rev-parse --show-toplevel)) && git add src && git add -u"
 
 [tool.pixi.tasks.install-dev]
-cmd = "XLA_FFI_INCLUDE_DIR=$(python -c 'from jax import ffi; print(ffi.include_dir())') pip install --no-build-isolation --force-reinstall --no-deps ."
+cmd = "pip install --no-build-isolation --force-reinstall --no-deps ."
 description = "Install phasic in development mode with FFI support"
 
 [tool.pixi.tasks.notebook]
