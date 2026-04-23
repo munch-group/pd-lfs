@@ -1,0 +1,19 @@
+# MCP Servers to clone from git
+# Format: name|type|source|extra
+#
+# Types:
+#   git-clone  - Clone the repo and use its own pixi.toml (if present)
+#
+# Servers installed via pixi.toml features don't need to be listed here.
+# Only add repos that need to be cloned separately.
+
+# Example: A server with its own pixi.toml
+paper-search|git-clone|https://github.com/openags/paper-search-mcp|
+desktop-commander|git-clone|https://github.com/wonderwhy-er/DesktopCommanderMCP|
+string-db|git-clone|https://github.com/munch-group/string-mcp|
+ensembl-db|git-clone|https://github.com/munch-group/ensembl-mcp|
+markitdown-mcp|git-clone|https://github.com/microsoft/markitdown|
+mcp-find|git-clone|https://github.com/mcprepository/mcp-find|
+
+# Example: Private repo (requires SSH key or GH auth)
+# internal-tools|git-clone|git@github.com:myorg/internal-mcp.git|

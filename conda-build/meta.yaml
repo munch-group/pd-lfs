@@ -1,0 +1,45 @@
+{% set pyproject = load_file_data("../pyproject.toml", from_recipe_dir=True) %}
+
+package:
+  name: munch-group-library
+  version: {{ pyproject.get("project").get("version") }}
+
+source:
+  git_url: https://github.com/munch-group/munch-group-library.git
+
+build:
+  number: 0
+  script: $PYTHON -m pip install . -vv
+  python_version_independent: true
+  # entry_points:
+  #  - munch-group-library = munch_group_library:munch_group_library
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools>=65.0    
+  run:  # your library dependencies
+    {% for dep in pyproject.get("project").get("dependencies") %}
+    - {{ dep.lower() }}
+    {% endfor %}  
+
+channels:  # channels for your library dependencies
+  - conda-forge
+
+dependencies:   # keep this block with only these packages
+  - anaconda-client
+  - conda-build>=25.1.3 # from 25 the output file is a .conda not .tar.bz2
+  - conda-verify
+  - conda-package-handling
+  # - conda-forge/label/python_rc::_python_rc # Dummy package to force selection of python_rc channel when channel_priority is set to strict
+
+test:
+  imports:
+    - munch_group_library
+
+about:
+  home: https://github.com/munch-group/munch-group-library.git
+  license: MIT
+  dev_url: https://github.com/munch-group/munch-group-library.git
+  doc_url: https://munch-group.org/munch-group-library

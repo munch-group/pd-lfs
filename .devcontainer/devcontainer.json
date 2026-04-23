@@ -1,0 +1,110 @@
+{
+  "name": "Claude Code Sandbox",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "TZ": "${localEnv:TZ:America/Los_Angeles}",
+      "CLAUDE_CODE_VERSION": "latest",
+      "GIT_DELTA_VERSION": "0.18.2",
+      "ZSH_IN_DOCKER_VERSION": "1.2.0"
+    },
+    // "context": "..",
+    "options": ["--platform=linux/amd64"]
+  },
+  "runArgs": [
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW",
+    "--platform=linux/amd64"
+  ],
+  // "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "be5invis.toml",
+        "ms-vscode.cpptools-",
+        "ms-toolsai.jupyter-",
+        "reditorsupport.r-syntax",
+        "dnut.rewrap-revived",
+        "ms-vscode.vscode-speech",
+        "njpwerner.autodocst",
+        "samuelcolvin.jinjah",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "vadimcn.vscode-lldb",
+        "streetsidesoftware.code-spell-checker",
+        "howardzuo.vscode-favorites",
+        "mhutchie.git-graph",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        // "ms-python.isort",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.jupyter-renderers",
+        "james-yu.latex-workshop",
+        "sumneko.lua",
+        "yzhang.markdown-all-in-one",
+        "takumii.markdownt",
+        "webfreak.debug",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-python-envs",
+        "quarto.quarto",
+        "reditorsupport.r",
+        "mechatroner.rainbow-csv",
+        "redhat.vscode-yaml",
+        "charliermarsh.ruff", 
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  },
+  // "postCreateCommand": "pixi config set --local run-post-link-scripts insecure && /workspace/.devcontainer/mcp-setup/install.sh",
+  "postCreateCommand": "/workspace/.devcontainer/mcp-setup/install.sh",
+  "remoteUser": "node",
+  "mounts": [
+    "source=claude-code-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
+    "source=claude-code-config-${devcontainerId},target=/home/node/.claude,type=volume"
+  ],
+  "containerEnv": {
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude",
+    "POWERLEVEL9K_DISABLE_GITSTATUS": "true",
+    "PIXI_HOME": "/home/node/.pixi",
+    "MCP_SERVERS_DIR": "/home/node/.local/mcp-servers"
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/node/.pixi/bin:/home/node/.cargo/bin:/home/node/.local/bin"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/workspace",
+  "postStartCommand": "sudo /usr/local/bin/init-firewall.sh",
+  "waitFor": "postStartCommand"
+}

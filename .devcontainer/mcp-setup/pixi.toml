@@ -1,0 +1,89 @@
+[workspace]
+name = "mcp-servers"
+version = "0.1.0"
+description = "MCP servers for Claude (devcontainer)"
+channels = ["conda-forge"]
+# Devcontainer only - linux-64 works everywhere (including Apple Silicon via Rosetta)
+platforms = ["linux-64"]
+
+# Base dependencies needed by most MCP servers
+[dependencies]
+python = ">=3.11"
+nodejs = ">=20"
+git = "*"
+jq = "*"
+pip = "*"
+gcc = "*"
+# Audio support for voice-enabled MCP servers
+alsa-lib = "*"
+portaudio = "*"
+
+# pip dependencies (PyPI packages)
+[pypi-dependencies]
+mcp = "*"  # Base MCP package
+
+# ============================================
+# Define each MCP server as a feature
+# ============================================
+# Note: Official servers are Node.js packages, not Python
+# They will be installed via npx, not pip
+#
+# REMOVED (built into Claude Code):
+# - filesystem: Claude Code has mcp__filesystem__* tools built-in
+# - fetch: Claude Code has WebFetch tool built-in
+
+[feature.memory]
+# @modelcontextprotocol/server-memory (Node.js)
+
+[feature.arxiv]
+[feature.arxiv.pypi-dependencies]
+# Install from git
+arxiv-mcp-server = { git = "https://github.com/blazickjp/arxiv-mcp-server.git" }
+
+[feature.github]
+# @modelcontextprotocol/server-github (Node.js)
+
+[feature.sqlite]
+[feature.sqlite.pypi-dependencies]
+mcp-server-sqlite = "*"
+
+# ============================================
+# Environments combining features
+# ============================================
+
+[environments]
+# Default: common servers
+default = { features = ["memory"], solve-group = "default" }
+
+# Full: everything
+full = { features = ["memory", "arxiv", "github", "sqlite"], solve-group = "full" }
+
+# Research-focused
+research = { features = ["arxiv"], solve-group = "research" }
+
+# Minimal (no extra MCP servers - use Claude Code built-ins)
+minimal = { solve-group = "minimal" }
+
+# ============================================
+# Tasks for running servers
+# ============================================
+
+[tasks]
+# Generate MCP config
+generate-config = { cmd = "bash generate-config.sh" }
+
+# Test all servers
+test-servers = { cmd = "bash test-servers.sh" }
+
+# Individual server tasks (useful for debugging)
+[feature.arxiv.tasks]
+run-arxiv = { cmd = "python -m arxiv_mcp_server" }
+
+[feature.memory.tasks]
+run-memory = { cmd = "npx -y @modelcontextprotocol/server-memory" }
+
+[feature.github.tasks]
+run-github = { cmd = "npx -y @modelcontextprotocol/server-github" }
+
+[feature.sqlite.tasks]
+run-sqlite = { cmd = "python -m mcp_server_sqlite" }
