@@ -1,6 +1,6 @@
 import json
 import os
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import urljoin
@@ -67,7 +67,7 @@ def write_parquet(df, path, group=None, max_bytes=50 * 1024**2,
             written = _write_flat(sub, subdir, max_bytes, compression, rows_per_check)
             all_entries.extend(_entry(w, rel_dir, partition) for w in written)
     else:
-        with ProcessPoolExecutor(max_workers=n_jobs) as pool:
+        with ThreadPoolExecutor(max_workers=n_jobs) as pool:
             futures = {
                 pool.submit(_write_flat, sub, subdir,
                             max_bytes, compression, rows_per_check):
