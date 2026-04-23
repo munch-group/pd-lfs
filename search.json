@@ -1,0 +1,181 @@
+[
+  {
+    "objectID": "api/scriptname.html",
+    "href": "api/scriptname.html",
+    "title": "scriptname",
+    "section": "",
+    "text": "scriptname\npd_lfs.modulename.scriptname()",
+    "crumbs": [
+      "Some other section",
+      "scriptname"
+    ]
+  },
+  {
+    "objectID": "api/index.html",
+    "href": "api/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Some description…\n\n\n\nfunctionname\nThe sum of two numbers.\n\n\n\n\n\n\nSome description…\n\n\n\nscriptname",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "api/index.html#some-section",
+    "href": "api/index.html#some-section",
+    "title": "Function reference",
+    "section": "",
+    "text": "Some description…\n\n\n\nfunctionname\nThe sum of two numbers.",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "api/index.html#some-other-section",
+    "href": "api/index.html#some-other-section",
+    "title": "Function reference",
+    "section": "",
+    "text": "Some description…\n\n\n\nscriptname",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html",
+    "href": "pages/overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "pd-lfs lets you …\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#installation",
+    "href": "pages/overview.html#installation",
+    "title": "Overview",
+    "section": "Installation",
+    "text": "Installation\n\npixicondapip\n\n\npixi workspace channel add munch-group\npixi add pd-lfs\n\n\nconda install -c munch-group pd-lfs\n\n\npip install pd-lfs",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#basic-use",
+    "href": "pages/overview.html#basic-use",
+    "title": "Overview",
+    "section": "Basic use",
+    "text": "Basic use",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#some-use-case",
+    "href": "pages/overview.html#some-use-case",
+    "title": "Overview",
+    "section": "Some use case",
+    "text": "Some use case\nThe functionname function does … pd_lfs.modulename.functionname does … functionname does …\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\n# from pd_lfs.modulename import functionname\n# functionname(3, 4)\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\ncontents:\n  - MdRenderer\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#learning-more",
+    "href": "pages/overview.html#learning-more",
+    "title": "Overview",
+    "section": "Learning more",
+    "text": "Learning more\nGo to the anvanced page to learn how to …\n\nExamples page: sites using quartodoc.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/example.html",
+    "href": "pages/example.html",
+    "title": "Workplace interaction",
+    "section": "",
+    "text": "%load_ext autoreload\n%autoreload 2\nImport some plotting libraries and set some defaults:\nimport sys\nimport numpy as np\nimport pandas as pd\nfrom IPython.display import display, Markdown\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nsns.set()\nsns.set_style(\"whitegrid\")\nnp.random.seed(42)\n%config InlineBackend.figure_formats = ['svg']",
+    "crumbs": [
+      "Examples",
+      "Workplace interaction"
+    ]
+  },
+  {
+    "objectID": "pages/example.html#sampling",
+    "href": "pages/example.html#sampling",
+    "title": "Workplace interaction",
+    "section": "Sampling",
+    "text": "Sampling\n\nsubjects = pd.read_csv('../../data/data_table.csv')\nsample_size = subjects.shape[0]\n\n\nTip:\nBy adding a label and caption to a cell displaying a table, you can refer to that table elsewhere and insert it in a manuscript.\n\n\nsubjects\n\n\n\nTable 1: People included in the analysis.\n\n\n\n\n\n\n\n\n\n\nname\nage\nsex\nposition\nnationality\n\n\n\n\n0\nJulie\n27\nF\nPhDstudent\nDK\n\n\n1\nThomas\n33\nM\nPostdoc\nGB\n\n\n2\nEmilie\n23\nF\nPhDstudent\nCH\n\n\n3\nSofie\n31\nF\nPostdoc\nDK\n\n\n4\nSara\n29\nF\nPostdoc\nUS\n\n\n5\nCecilie\n34\nF\nPostdoc\nDK\n\n\n6\nAnders\n32\nM\nPhDstudent\nUK\n\n\n7\nEmma\n42\nF\nProfessor\nDK\n\n\n8\nCaroline\n31\nF\nPhDstudent\nDK\n\n\n9\nLaura\n30\nF\nPostdoc\nDK\n\n\n10\nMikkel\n33\nM\nPostdoc\nNL\n\n\n11\nJens\n27\nM\nPhDstudent\nDK\n\n\n12\nAndreas\n29\nM\nPhDstudent\nDK\n\n\n13\nJakob\n28\nM\nPhDstudent\nDK\n\n\n14\nMathilde\n61\nF\nProfessor\nDK\n\n\n15\nKatrine\n35\nF\nPostdoc\nDK\n\n\n16\nPoul\n30\nM\nPostdoc\nDK\n\n\n17\nAnna\n26\nF\nPhDstudent\nDK\n\n\n18\nPeter\n42\nM\nProfessor\nGB\n\n\n19\nIda\n53\nF\nPostdoc\nDK\n\n\n20\nFreja\n30\nF\nPostdoc\nDK\n\n\n21\nMaria\n39\nF\nProfessor\nUK\n\n\n22\nAmalie\n29\nF\nPhDstudent\nDK\n\n\n23\nCamilla\n35\nF\nPostdoc\nDK\n\n\n\n\n\n\n\n\n\n\n\nTip:\nBy generaing markdown for descriptions that will eventually end up in the manuscript, you can imbed python values. It also ensures that the manuscript exactly reflects the notebook.\n\n\n\nThe 24 subjects from workplaces in Denmark were interviewed …. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah",
+    "crumbs": [
+      "Examples",
+      "Workplace interaction"
+    ]
+  },
+  {
+    "objectID": "pages/example.html#interviews",
+    "href": "pages/example.html#interviews",
+    "title": "Workplace interaction",
+    "section": "Interviews",
+    "text": "Interviews\nIn interviewed {python} sample_size workplace individuals were interviewed by …. blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah,\n\n\n#| label: tbl-measured-informality\n#| tbl-cap: \"Informality quantified for subjects in the study.\"\n\ndf = pd.DataFrame({'name': subjects.name, \n                   'seniority': np.random.randint(0, 5, sample_size), \n                   'age': subjects.age})\ndf['informality'] = np.random.normal(loc=10, scale=1, size=sample_size)\ndf\n\n\n\n\n\n\n\n\nname\nseniority\nage\ninformality\n\n\n\n\n0\nJulie\n3\n27\n10.816445\n\n\n1\nThomas\n4\n33\n8.476124\n\n\n2\nEmilie\n2\n23\n9.571954\n\n\n3\nSofie\n4\n31\n9.257593\n\n\n4\nSara\n4\n29\n9.296656\n\n\n5\nCecilie\n1\n34\n7.860379\n\n\n6\nAnders\n2\n32\n9.370525\n\n\n7\nEmma\n2\n42\n10.597720\n\n\n8\nCaroline\n2\n31\n12.559488\n\n\n9\nLaura\n4\n30\n10.394233\n\n\n10\nMikkel\n3\n33\n10.122219\n\n\n11\nJens\n2\n27\n9.484564\n\n\n12\nAndreas\n4\n29\n9.399746\n\n\n13\nJakob\n1\n28\n10.947440\n\n\n14\nMathilde\n3\n61\n10.291034\n\n\n15\nKatrine\n1\n35\n9.364440\n\n\n16\nPoul\n3\n30\n8.978448\n\n\n17\nAnna\n4\n26\n9.838245\n\n\n18\nPeter\n0\n42\n9.466351\n\n\n19\nIda\n3\n53\n9.994472\n\n\n20\nFreja\n1\n30\n9.770550\n\n\n21\nMaria\n4\n39\n10.389349\n\n\n22\nAmalie\n3\n29\n8.734881\n\n\n23\nCamilla\n0\n35\n11.091992\n\n\n\n\n\n\n\n\ndf.groupby(['seniority']).mean(numeric_only=True).reset_index()\n\n\n\nTable 2: Mean interaction scores by seniority and age\n\n\n\n\n\n\n\n\n\n\nseniority\nage\ninformality\n\n\n\n\n0\n0\n38.500000\n10.279172\n\n\n1\n1\n31.750000\n9.485702\n\n\n2\n2\n31.000000\n10.316850\n\n\n3\n3\n38.833333\n9.822917\n\n\n4\n4\n31.000000\n9.578849\n\n\n\n\n\n\n\n\n\n\n\nsns.scatterplot(x='age', y='informality', data=df, hue='seniority', palette='viridis')\nplt.ylabel('How informal you can be')\nplt.xlabel('Age')\nplt.legend(title='Seniority', loc='lower right', labels=['Undergrad', 'Postgrad', 'PhD', 'Postdoc', 'Professor'])\nplt.ylim(bottom=0) ;\n\n\n\n\n\n\n\nFigure 1: Interaction among Danes: How Danes interact is has very little to do with age and seniority, compared to most other contries.\n\n\n\n\n\nSeems Danish people act very informally unaffected by age and seniority.\n\ninformality_age_cor = df.informality.corr(df.age)\ninformality_age_cor\n\nnp.float64(0.10942859782514087)\n\n\n\ninformality_seniority_cor = df.informality.corr(df.seniority)\ninformality_seniority_cor\n\nnp.float64(-0.13673439318448927)\n\n\n\n\nThe correlation between informality and age was 0.109 and the correlation between informality and seniority was -0.137.\n\n\n\nsns.lmplot(x='age', y='informality', data=df, hue='seniority', palette='viridis')\nplt.ylabel('How informal you can be')\nplt.xlabel('Age') ;\n\n\n\n\n\n\n\nFigure 2: Interaction among Danes: Regressions of informality against age for five levels of seniority.",
+    "crumbs": [
+      "Examples",
+      "Workplace interaction"
+    ]
+  },
+  {
+    "objectID": "api/functionname.html",
+    "href": "api/functionname.html",
+    "title": "functionname",
+    "section": "",
+    "text": "pd_lfs.modulename.functionname(x=1, y=1)\nThe sum of two numbers.\n\n\n\nx : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number.\n\n\n\n\n\n\n : int\n\nSum of two numbers.\n\n\n\n\n\nAdding two numbers\nresult = foo(2, 4)\n\n\n\nlibraryname.modulename.scriptname",
+    "crumbs": [
+      "Some section",
+      "functionname"
+    ]
+  },
+  {
+    "objectID": "api/functionname.html#parameters",
+    "href": "api/functionname.html#parameters",
+    "title": "functionname",
+    "section": "",
+    "text": "x : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number.",
+    "crumbs": [
+      "Some section",
+      "functionname"
+    ]
+  },
+  {
+    "objectID": "api/functionname.html#returns",
+    "href": "api/functionname.html#returns",
+    "title": "functionname",
+    "section": "",
+    "text": ": int\n\nSum of two numbers.",
+    "crumbs": [
+      "Some section",
+      "functionname"
+    ]
+  },
+  {
+    "objectID": "api/functionname.html#examples",
+    "href": "api/functionname.html#examples",
+    "title": "functionname",
+    "section": "",
+    "text": "Adding two numbers\nresult = foo(2, 4)",
+    "crumbs": [
+      "Some section",
+      "functionname"
+    ]
+  },
+  {
+    "objectID": "api/functionname.html#see-also",
+    "href": "api/functionname.html#see-also",
+    "title": "functionname",
+    "section": "",
+    "text": "libraryname.modulename.scriptname",
+    "crumbs": [
+      "Some section",
+      "functionname"
+    ]
+  }
+]
