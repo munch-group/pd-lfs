@@ -1,6 +1,6 @@
-# scriptname { #munch_group_library.modulename.scriptname }
+# scriptname { #pd_lfs.modulename.scriptname }
 
 ```python
-munch_group_library.modulename.scriptname()
+pd_lfs.modulename.scriptname()
 ```
 

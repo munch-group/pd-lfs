@@ -18,4 +18,4 @@ Finally you should see the filter run when previewing your docs:
 
 Uninstall 
 
-    pip uninstall munch-group-library
+    pip uninstall pd-lfs

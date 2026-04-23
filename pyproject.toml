@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "munch-group-library"
+name = "pd-lfs"
 version = "0.1.16"
 description = "Project description"
 authors = [
@@ -21,12 +21,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/munch-group/munch-group-library"
-Repository = "https://github.com/munch-group/munch-group-library"
-Documentation = "https://munch-group.org/munch-group-library"
+Homepage = "https://github.com/munch-group/pd-lfs"
+Repository = "https://github.com/munch-group/pd-lfs"
+Documentation = "https://munch-group.org/pd-lfs"
 
-[project.scripts]
-munch-group-library = "munch_group_library:munch_group_library"
+# [project.scripts]
+# pd-lfs = "pd_lfs:pd_lfs"
 
 [tool.setuptools]
 include-package-data = true
@@ -36,7 +36,7 @@ where = ["src"]
 exclude = ["test*"]
 
 [tool.setuptools.package-data]
-munch_group_library = ["data/*.txt", "data/*.csv", "data/*.pickle", "data/*.h5"]
+pd_lfs = ["data/*.txt", "data/*.csv", "data/*.pickle", "data/*.h5"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge", "munch-group"]
@@ -49,20 +49,16 @@ jupyter = "*"
 quarto = "*"
 quartodoc = "*"
 nbconvert = "*"
-anthropic = "*"
-pip = ">=25.2,<26"
+pip = ">=26.0.1,<27"
 nodejs = ">=20,<23"
 git = "*"
-git-lfs = "*"
 gh = "*"
 ipython = "*"
-seaborn = "*"
-nbdime = ">=4.0.2,<5"
-vscodenb = "*"
-r-rsvg = "*"
+pyarrow = "*"
+nbdime = ">=4.0.4,<5"
 
 # [tool.pixi.pypi-dependencies]
-# munch-group-library = { path = ".", editable = true }
+# pd-lfs = { path = ".", editable = true }
 
 [tool.pixi.environments]
 default = {solve-group = "default"}
@@ -72,7 +68,7 @@ cmd = "python ./scripts/rename.py && gh repo set-default https://github.com/munc
 
 [tool.pixi.tasks.install-dev]
 cmd = "pip install --no-build-isolation --force-reinstall --no-deps ."
-description = "Install phasic in development mode with FFI support"
+description = "Install"
 
 [tool.pixi.tasks.notebook]
 args = [ { "arg" = "notebook" } ]

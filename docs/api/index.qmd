@@ -7,7 +7,7 @@ Some description...
 
 | | |
 | --- | --- |
-| [functionname](functionname.qmd#munch_group_library.modulename.functionname) | The sum of two numbers. |
+| [functionname](functionname.qmd#pd_lfs.modulename.functionname) | The sum of two numbers. |
 
 ## Some other section
 
@@ -16,4 +16,4 @@ Some description...
 
 | | |
 | --- | --- |
-| [scriptname](scriptname.qmd#munch_group_library.modulename.scriptname) |  |
+| [scriptname](scriptname.qmd#pd_lfs.modulename.scriptname) |  |

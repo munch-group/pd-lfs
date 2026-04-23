@@ -37,7 +37,7 @@ interlinks:
     #   inv: objects-test.txt
 
 website:
-  title: "munch-group-library"
+  title: "pd-lfs"
   page-navigation: true
   navbar:
     left:
@@ -47,7 +47,7 @@ website:
       #   text: Gallery
     right:
       - icon: github
-        href: https://github.com/munch-group/munch-group-library/
+        href: https://github.com/munch-group/pd-lfs/
   sidebar:
     - id: pages
       title: Get Started
@@ -76,7 +76,7 @@ format:
       theme: neutral 
 
 quartodoc:
-  package: munch-group-library
+  package: pd-lfs
   style: pkgdown
   dir: api
   render_interlinks: true
@@ -90,14 +90,10 @@ quartodoc:
 
   sections:
     - title: Some section
-      package: munch_group_library.modulename
+      package: pd_lfs.parquet
       desc: |
         Some description...
       contents:
-        - functionname
-    - title: Some other section
-      package: munch_group_library.modulename
-      desc: |
-        Some description...
-      contents:
-        - scriptname
+        - write_parquet
+        - read_parquet
+

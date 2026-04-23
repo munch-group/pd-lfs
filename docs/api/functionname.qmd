@@ -1,7 +1,7 @@
-# functionname { #munch_group_library.modulename.functionname }
+# functionname { #pd_lfs.modulename.functionname }
 
 ```python
-munch_group_library.modulename.functionname(x=1, y=1)
+pd_lfs.modulename.functionname(x=1, y=1)
 ```
 
 The sum of two numbers.

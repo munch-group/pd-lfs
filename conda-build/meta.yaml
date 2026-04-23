@@ -1,18 +1,18 @@
 {% set pyproject = load_file_data("../pyproject.toml", from_recipe_dir=True) %}
 
 package:
-  name: munch-group-library
+  name: pd-lfs
   version: {{ pyproject.get("project").get("version") }}
 
 source:
-  git_url: https://github.com/munch-group/munch-group-library.git
+  git_url: https://github.com/munch-group/pd-lfs.git
 
 build:
   number: 0
   script: $PYTHON -m pip install . -vv
   python_version_independent: true
   # entry_points:
-  #  - munch-group-library = munch_group_library:munch_group_library
+  #  - pd-lfs = pd_lfs:pd_lfs
 
 requirements:
   host:
@@ -36,10 +36,10 @@ dependencies:   # keep this block with only these packages
 
 test:
   imports:
-    - munch_group_library
+    - pd_lfs
 
 about:
-  home: https://github.com/munch-group/munch-group-library.git
+  home: https://github.com/munch-group/pd-lfs.git
   license: MIT
-  dev_url: https://github.com/munch-group/munch-group-library.git
-  doc_url: https://munch-group.org/munch-group-library
+  dev_url: https://github.com/munch-group/pd-lfs.git
+  doc_url: https://munch-group.org/pd-lfs
