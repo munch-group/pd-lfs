@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pd-lfs"
-version = "0.1.26"
+version = "0.1.27"
 description = "Project description"
 authors = [
     {name = "Your Name", email = "your@email.com"}
