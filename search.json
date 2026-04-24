@@ -4,18 +4,14 @@
     "href": "api/scriptname.html",
     "title": "scriptname",
     "section": "",
-    "text": "scriptname\npd_lfs.modulename.scriptname()",
-    "crumbs": [
-      "Some other section",
-      "scriptname"
-    ]
+    "text": "scriptname\npd_lfs.modulename.scriptname()"
   },
   {
     "objectID": "api/index.html",
     "href": "api/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Some description…\n\n\n\nfunctionname\nThe sum of two numbers.\n\n\n\n\n\n\nSome description…\n\n\n\nscriptname",
+    "text": "Some description…\n\n\n\nwrite_parquet\nWrite df to path/ as part-*.parquet with a _manifest.json index.\n\n\nread_parquet\nRead a dataset written by write_parquet. Accepts local paths or https URLs.",
     "crumbs": [
       "Function reference"
     ]
@@ -25,19 +21,20 @@
     "href": "api/index.html#some-section",
     "title": "Function reference",
     "section": "",
-    "text": "Some description…\n\n\n\nfunctionname\nThe sum of two numbers.",
+    "text": "Some description…\n\n\n\nwrite_parquet\nWrite df to path/ as part-*.parquet with a _manifest.json index.\n\n\nread_parquet\nRead a dataset written by write_parquet. Accepts local paths or https URLs.",
     "crumbs": [
       "Function reference"
     ]
   },
   {
-    "objectID": "api/index.html#some-other-section",
-    "href": "api/index.html#some-other-section",
-    "title": "Function reference",
+    "objectID": "api/write_parquet.html",
+    "href": "api/write_parquet.html",
+    "title": "write_parquet",
     "section": "",
-    "text": "Some description…\n\n\n\nscriptname",
+    "text": "write_parquet\npd_lfs.parquet.write_parquet(\n    df,\n    path,\n    group=None,\n    max_bytes=50 * 1024 ** 2,\n    compression='zstd',\n    rows_per_check=50000,\n    n_jobs=None,\n    optimize=True,\n    precision=None,\n    float_decimals=None,\n    category_threshold=0.2,\n)\nWrite df to path/ as part-*.parquet with a _manifest.json index. The manifest enables read_parquet over plain HTTPS (no directory listing).\nWhen optimize=True (default) columns are downcast on the way out — ints shrunk, low-cardinality objects made categorical, floats reduced only if precision or float_decimals is set. The original per- column dtypes are stored in the manifest so read_parquet restores them transparently.",
     "crumbs": [
-      "Function reference"
+      "Some section",
+      "write_parquet"
     ]
   },
   {
@@ -91,58 +88,49 @@
     ]
   },
   {
+    "objectID": "api/read_parquet.html",
+    "href": "api/read_parquet.html",
+    "title": "read_parquet",
+    "section": "",
+    "text": "read_parquet\npd_lfs.parquet.read_parquet(path, **kwargs)\nRead a dataset written by write_parquet. Accepts local paths or https URLs. Falls back to pandas’ directory discovery if no manifest is present.\nIf the manifest records original dtypes (version &gt;= 2), columns are cast back to those dtypes so that optimization done at write time is transparent to the caller.",
+    "crumbs": [
+      "Some section",
+      "read_parquet"
+    ]
+  },
+  {
     "objectID": "api/functionname.html",
     "href": "api/functionname.html",
     "title": "functionname",
     "section": "",
-    "text": "pd_lfs.modulename.functionname(x=1, y=1)\nThe sum of two numbers.\n\n\n\nx : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number.\n\n\n\n\n\n\n : int\n\nSum of two numbers.\n\n\n\n\n\nAdding two numbers\nresult = foo(2, 4)\n\n\n\nlibraryname.modulename.scriptname",
-    "crumbs": [
-      "Some section",
-      "functionname"
-    ]
+    "text": "pd_lfs.modulename.functionname(x=1, y=1)\nThe sum of two numbers.\n\n\n\nx : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number.\n\n\n\n\n\n\n : int\n\nSum of two numbers.\n\n\n\n\n\nAdding two numbers\nresult = foo(2, 4)\n\n\n\nlibraryname.modulename.scriptname"
   },
   {
     "objectID": "api/functionname.html#parameters",
     "href": "api/functionname.html#parameters",
     "title": "functionname",
     "section": "",
-    "text": "x : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number.",
-    "crumbs": [
-      "Some section",
-      "functionname"
-    ]
+    "text": "x : int = 1\n\nThe first number\n\ny : int = 1\n\nThe second number."
   },
   {
     "objectID": "api/functionname.html#returns",
     "href": "api/functionname.html#returns",
     "title": "functionname",
     "section": "",
-    "text": ": int\n\nSum of two numbers.",
-    "crumbs": [
-      "Some section",
-      "functionname"
-    ]
+    "text": ": int\n\nSum of two numbers."
   },
   {
     "objectID": "api/functionname.html#examples",
     "href": "api/functionname.html#examples",
     "title": "functionname",
     "section": "",
-    "text": "Adding two numbers\nresult = foo(2, 4)",
-    "crumbs": [
-      "Some section",
-      "functionname"
-    ]
+    "text": "Adding two numbers\nresult = foo(2, 4)"
   },
   {
     "objectID": "api/functionname.html#see-also",
     "href": "api/functionname.html#see-also",
     "title": "functionname",
     "section": "",
-    "text": "libraryname.modulename.scriptname",
-    "crumbs": [
-      "Some section",
-      "functionname"
-    ]
+    "text": "libraryname.modulename.scriptname"
   }
 ]
