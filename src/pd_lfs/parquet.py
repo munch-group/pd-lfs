@@ -3,9 +3,9 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from io import BytesIO
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from urllib.request import urlopen
-
+import subprocess
 import numpy as np
 import pandas as pd
 import pyarrow as pa
@@ -13,6 +13,31 @@ import pyarrow.parquet as pq
 
 
 MANIFEST_NAME = "_manifest.json"
+
+def gh_permalink(url: str) -> str:
+    parsed = urlparse(url)
+    if parsed.netloc != "github.com":
+        raise ValueError(f"Not a github.com URL: {url}")
+
+    parts = parsed.path.strip("/").split("/", 4)
+    if len(parts) < 4 or parts[2] not in ("tree", "blob"):
+        raise ValueError(
+            f"Expected .../owner/repo/(tree|blob)/branch[/path], got: {url}"
+        )
+
+    owner, repo, kind, branch = parts[:4]
+    path = parts[4] if len(parts) == 5 else ""
+
+    result = subprocess.run(
+        ["gh", "api", f"repos/{owner}/{repo}/commits/{branch}", "--jq", ".sha"],
+        capture_output=True, text=True, check=True,
+    )
+    sha = result.stdout.strip()
+
+    permalink = f"https://github.com/{owner}/{repo}/{kind}/{sha}"
+    if path:
+        permalink += f"/{path}"
+    return permalink
 
 
 def optimize_dataframe(df, precision=None, float_decimals=None,
@@ -285,8 +310,12 @@ def read_parquet(path, **kwargs):
     back to those dtypes so that optimization done at write time is
     transparent to the caller.
     """
+    if path.startswith('https://github.com/'):
+        path = gh_permalink(path)
+
     if not path.endswith('/'):
         path = path + '/'
+
     if isinstance(path, str) and path.startswith(("http://", "https://")):
         base = path if path.endswith("/") else path + "/"
         with urlopen(urljoin(base, MANIFEST_NAME)) as resp:
