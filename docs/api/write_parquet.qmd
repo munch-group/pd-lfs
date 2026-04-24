@@ -1,0 +1,26 @@
+# write_parquet { #pd_lfs.parquet.write_parquet }
+
+```python
+pd_lfs.parquet.write_parquet(
+    df,
+    path,
+    group=None,
+    max_bytes=50 * 1024 ** 2,
+    compression='zstd',
+    rows_per_check=50000,
+    n_jobs=None,
+    optimize=True,
+    precision=None,
+    float_decimals=None,
+    category_threshold=0.2,
+)
+```
+
+Write df to path/ as part-*.parquet with a _manifest.json index.
+The manifest enables read_parquet over plain HTTPS (no directory listing).
+
+When ``optimize=True`` (default) columns are downcast on the way out —
+ints shrunk, low-cardinality objects made categorical, floats reduced
+only if ``precision`` or ``float_decimals`` is set. The original per-
+column dtypes are stored in the manifest so ``read_parquet`` restores
+them transparently.

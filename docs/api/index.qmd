@@ -7,13 +7,5 @@ Some description...
 
 | | |
 | --- | --- |
-| [functionname](functionname.qmd#pd_lfs.modulename.functionname) | The sum of two numbers. |
-
-## Some other section
-
-Some description...
-
-
-| | |
-| --- | --- |
-| [scriptname](scriptname.qmd#pd_lfs.modulename.scriptname) |  |
+| [write_parquet](write_parquet.qmd#pd_lfs.parquet.write_parquet) | Write df to path/ as part-*.parquet with a _manifest.json index. |
+| [read_parquet](read_parquet.qmd#pd_lfs.parquet.read_parquet) | Read a dataset written by write_parquet. Accepts local paths or https URLs. |

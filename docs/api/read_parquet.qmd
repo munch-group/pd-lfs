@@ -1,0 +1,12 @@
+# read_parquet { #pd_lfs.parquet.read_parquet }
+
+```python
+pd_lfs.parquet.read_parquet(path, **kwargs)
+```
+
+Read a dataset written by write_parquet. Accepts local paths or https URLs.
+Falls back to pandas' directory discovery if no manifest is present.
+
+If the manifest records original dtypes (version >= 2), columns are cast
+back to those dtypes so that optimization done at write time is
+transparent to the caller.

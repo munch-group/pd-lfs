@@ -3,10 +3,8 @@ website:
   - contents:
     - api/index.qmd
     - contents:
-      - api/functionname.qmd
+      - api/write_parquet.qmd
+      - api/read_parquet.qmd
       section: Some section
-    - contents:
-      - api/scriptname.qmd
-      section: Some other section
     id: api
   - id: dummy-sidebar
