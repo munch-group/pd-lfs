@@ -19,6 +19,8 @@ def write_parquet(df, path, group=None, max_bytes=50 * 1024**2,
     """Write df to path/ as part-*.parquet with a _manifest.json index.
     The manifest enables read_parquet over plain HTTPS (no directory listing).
     """
+    if not path.endswith('/'):
+        path = path + '/'
     path = Path(path)
 
     if group is None:
@@ -158,6 +160,8 @@ def read_parquet(path, **kwargs):
     """Read a dataset written by write_parquet. Accepts local paths or https URLs.
     Falls back to pandas' directory discovery if no manifest is present.
     """
+    if not path.endswith('/'):
+        path = path + '/'
     if isinstance(path, str) and path.startswith(("http://", "https://")):
         base = path if path.endswith("/") else path + "/"
         with urlopen(urljoin(base, MANIFEST_NAME)) as resp:
